@@ -183,5 +183,5 @@ function calcular() {
         "spTotal",
         total
 
-    );
+    ); 
 }
