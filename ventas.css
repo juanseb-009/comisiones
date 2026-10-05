@@ -1,35 +1,319 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
-    font-family: Arial;
-    background-color: #0f172a;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+
+    min-height: 100vh;
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    padding: 20px;
 }
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 
 .contenedor {
     background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
 }
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+h1 {
+    text-align: center;
+
+    font-size: 1.8rem;
+    line-height: 1.2;
+
+    margin-bottom: 28px;
+
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 1.3rem;
+
+    margin-top: 28px;
+    margin-bottom: 16px;
+
+    color: #22c55e;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding-bottom: 10px;
+}
+
+
+/* =========================
+   ETIQUETAS
+========================= */
+
+label {
+    display: block;
+
+    font-size: 0.95rem;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   CAMPOS DE TEXTO
+========================= */
 
 input {
+    display: block;
+
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    border: 2px solid #334155;
+    border-radius: 8px;
+
+    background-color: #0f172a;
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
+input:focus {
+    border-color: #22c55e;
+
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
 button {
+    display: block;
+
     width: 100%;
-    padding: 10px;
+
+    padding: 13px 16px;
+
+    margin-top: 5px;
+
     background-color: #22c55e;
+
     border: none;
-    color: white;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: bold;
+
     cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 button:hover {
     background-color: #16a34a;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(34, 197, 94, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #cbd5e1;
+
+    font-size: 0.95rem;
+}
+
+p:last-child {
+    border-bottom: none;
+}
+
+p span {
+    color: #ffffff;
+
+    font-weight: bold;
+
+    text-align: right;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px;
+    }
+
+    .contenedor {
+        max-width: 500px;
+
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+
+        align-items: flex-start;
+
+        padding-top: 25px;
+    }
+
+    .contenedor {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 1.45rem;
+
+        margin-bottom: 23px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+
+        margin-top: 24px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input {
+        padding: 12px;
+
+        font-size: 1rem;
+
+        margin-bottom: 16px;
+    }
+
+    button {
+        padding: 13px;
+
+        font-size: 0.95rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+    p span {
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
+
+@media (max-width: 350px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        padding: 18px 14px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
 }

@@ -9,32 +9,18 @@ function calcularComision(numeroVentas,PrecioProducto){
     return comision;
 }
 function calcular(){
-    // recuperamos propieddades de las cajas de texto
-    let componenteSueldoBase= document.getElementById("txtSueldoBase");
-    let componenteVentas= document.getElementById("txtVentas");
-    let componentePrecio= document.getElementById("txtPrecio");
 
-    // recuperamos el valor de las cajas de texto
-    let sueldoBaseStr = componenteSueldoBase.value;
-    let ventasStr = componenteVentas.value;
-    let precioStr =componentePrecio.value;
-
-    //convertimos el texto a numero
-
-    let sueldoBase = parseFloat(sueldoBaseStr);
-    let numeroVentas = parseFloat(ventasStr);
-    let PrecioProducto = parseFloat(precioStr); 
+    let sueldoBase = recuperarFloat("txtSueldoBase");
+    let numeroVentas = recuperarFloat("txtVentas");
+    let PrecioProducto = recuperarFloat("txtPrecio"); 
 
     let comision = calcularComision(numeroVentas, PrecioProducto);
 
     let total = sueldoBase + comision;
 
-    let spSueldoBase=document.getElementById("spSueldoBase");
-    let spComision=document.getElementById("spComision");
-    let spTotal=document.getElementById("spTotal");
 
-    spSueldoBase.textContent = sueldoBase;
-    spComision.textContent= comision;
-    spTotal.textContent = total;
-
+    mostrarenSp("spSueldoBase",sueldoBase);
+    mostrarenSp("spComision",comision);
+    mostrarenSp("spTotal",total);
 }
+
