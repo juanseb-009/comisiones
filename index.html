@@ -10,8 +10,8 @@
 
     <link rel="stylesheet" href="ventas.css">
 
-    <script src="utilitarios.js"></script>
-    <script src="ventas.js"></script>
+    <script src="utilitarios.js" defer></script>
+    <script src="ventas.js" defer></script>
 </head>
 
 <body>
@@ -20,16 +20,19 @@
 
         <h1>Calculadora de Comisiones</h1>
 
-        <label>Salario Base:</label>
-        <input type="text" id="txtSueldoBase">
+        <label for="txtSueldoBase">Salario Base:</label>
+        <input type="text" id="txtSueldoBase" onblur="validarSueldoBase()">
+        <span id="errorSueldoBase" class="mensaje-error"></span>
 
-        <label>Número de ventas:</label>
-        <input type="text" id="txtVentas">
+        <label for="txtVentas">Número de ventas:</label>
+        <input type="text" id="txtVentas" onblur="validarVentas()">
+        <span id="errorVentas" class="mensaje-error"></span>
 
-        <label>Precio del producto:</label>
-        <input type="text" id="txtPrecio">
+        <label for="txtPrecio">Precio del producto:</label>
+        <input type="text" id="txtPrecio" onblur="validarPrecio()">
+        <span id="errorPrecio" class="mensaje-error"></span>
 
-        <button onclick="calcular()">Calcular Comisión</button>
+        <button type="button" onclick="calcular()">Calcular Comisión</button>
 
         <h2>Resultados</h2>
 
